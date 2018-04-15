@@ -4,7 +4,7 @@ function info_integration(node) {
 	var absorbed_info = info_absorption(node);
 	var contributed_info = info_contribution(node);
 
-	calculated_i_i = contributed_info / absorbed_info;
+	calculated_i_i = absorbed_info * contributed_info;
 
 	return calculated_i_i
 }
