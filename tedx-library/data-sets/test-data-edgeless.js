@@ -1,4 +1,4 @@
-var edgeless_network = {
+var small_edgeless_network = {
   "nodes":[
     {
       "group": "nodes", 

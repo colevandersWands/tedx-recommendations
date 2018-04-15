@@ -8,7 +8,7 @@
    <script src="tedx-library/jstat.js"></script> 
    <script src="tedx-library/data-sets/test-data-flat.js"></script>
    <script src="tedx-library/data-sets/test-data-stepped.js"></script>
-   <script src="tedx-library/data-sets/test-data-edgeless.js"></script>
+   <script src="tedx-library/data-sets/more-realistic.js"></script>
    <script src="tedx-library/tally-sources.js"></script>
    <script src="tedx-library/tally-targets.js"></script>
    <script src="tedx-library/main.js"></script>
@@ -24,6 +24,10 @@
       <button id="stepped-data" class="customButtons"> Stepped </button>
       <button id="edgeless-data" class="customButtons"> No-Edges </button>
    </div>
+   <div>
+      <button id="generate-edges" class="customButtons"> Generate n edges: </button>
+      <input id="num-edges" /> 
+   </div>
    <table>
      <tr>
        <td>
@@ -35,7 +39,7 @@
               <input type="radio" name="is-directed" value="true" /> directed edge
               <input type="radio" name="is-directed" value="false" /> undirected edge (default)
             </form>
-            <p id="add-an-edge">click to add an edge</p>
+            <button id="add-an-edge" class="customButtons">add an edge </button>
          </div>
        </td>
        <td>
@@ -43,16 +47,16 @@
             <p>Analyze node's influences:  
                <input id="node-to-analyze" /> 
             </p>
-            <p id="analyze">click to analyze</p>
+            <button id="analyze" class="customButtons"> analyze </button>
             <p id="analysis-display"></p>
          </div>
        </td>
        <td>
          <div id="mi-div">
             <p>
-               Determine info contribution from <input id="mi-source" /> to <input id="mi-target" /> 
+               Determine mutual info from <input id="mi-source" /> to <input id="mi-target" /> 
             </p>
-            <p id="calculate-mi">click to calculate info contribution</p>
+            <button id="calculate-mi" class="customButtons"> calculate mi </button>
             <p id="mi-display"></p>
          </div>
        </td>
@@ -62,13 +66,13 @@
                Find pairwise entropy for <input id="p-e-source" /> & <input id="p-e-target" /> 
             </p>
             <p> (this measurement is symmetrical) </p>
-            <p id="calculate-p-e">click to calculate entropy </p>
+            <button id="calculate-p-e" class="customButtons"> calculate entropy </button>
             <p id="p-e-display"></p>
          </div>
        </td>
       <td>
          <div id="g-e-div">
-            <p id="calculate-g-e">calculate global entropy </p>
+            <button id="calculate-g-e" class="customButtons"> calculate global entropy </button>
             <p id="g-e-display"></p>
          </div>
        </td>
@@ -79,7 +83,7 @@
             <p>
                Find the info absorption for node: <input id="i-a-node" /> 
             </p>
-            <p id="calculate-i-a">calculate absorption information</p>
+            <button id="calculate-i-a" class="customButtons"> calculate ia </button>
             <p id="i-a-display"></p>
          </div>
       </td>
@@ -88,7 +92,7 @@
             <p>
                Find the info contribution for node: <input id="i-c-node" /> 
             </p>
-            <p id="calculate-i-c">calculate contributed information</p>
+            <button id="calculate-i-c" class="customButtons"> calculate ic </button>
             <p id="i-c-display"></p>
          </div>
       </td>
@@ -97,7 +101,7 @@
             <p>
                Find the info integration for node: <input id="i-i-node" /> 
             </p>
-            <p id="calculate-i-i">calculate integrated information</p>
+            <button id="calculate-i-i" class="customButtons"> calculate ii </button>
             <p id="i-i-display"></p>
          </div>
       </td>
@@ -126,6 +130,7 @@
    <script src="tedx-library/measures/info-integration.js"></script>
    <script src="tedx-library/data-sets/swap-data-sets.js"></script>
    <script src="tedx-library/add-node.js"></script>
+   <script src="tedx-library/data-sets/generate-edges.js"></script>
 
 
 

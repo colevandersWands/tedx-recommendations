@@ -8,8 +8,6 @@ function info_contribution(node) {
 		mi_contributions[target] = mutual_information(node, target);
 	}
 
-	console.log(target_tally, mi_contributions)
-
 	var contributions_sum = 0;
 	for (var target in mi_contributions) {
 		contributions_sum += target_tally[target] * mi_contributions[target]
