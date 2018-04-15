@@ -46,9 +46,9 @@ var node_contributions_handler = function() {
 	
 	var analysis = node_contributions(node_to_analyze);
 
-	var analysis_string = JSON.stringify(analysis[1])
+	console.log(analysis[1])
 	var analysis_display = document.getElementById("analysis-display");
-	analysis_display.innerHTML = analysis_string;
+	analysis_display.innerHTML = "inspect page to view results";
 };
 
 var analyze_button = document.getElementById("analyze")
