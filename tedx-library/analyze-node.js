@@ -62,7 +62,7 @@ var analyze_node_handler = function() {
 	var analysis = analyze_node(node_to_analyze);
 
 	var analysis_string = JSON.stringify(analysis[1])
-	var analysis_display = document.getElementById("analysis_display");
+	var analysis_display = document.getElementById("analysis-display");
 	analysis_display.innerHTML = analysis_string;
 };
 
