@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>cyjs: addNodeEdgeLayoutFit</title>
+   <script src="jquery-2.1.0.min.js"></script>
+   <script src="cytoscape-2.1.0.min.js"></script>
+   <script src="tedx-library/data.js"></script>
+   <script src="tedx-library/main.js"></script>
+   <link rel="stylesheet" type="text/css" href="demo.css" media="screen" />
+</head>
+
+<body>
+   <div id="toolbar">
+      <button id="fitButton"           class="customButtons"> Fit </button>
+   </div>
+   <br>
+   <div id="add-edge-div">
+      <p>
+         Add edge from <input id="new-source" /> to <input id="new-target" /> 
+      </p>
+      <form>
+        <input type="radio" name="is-directed" value="true" /> directed edge
+        <input type="radio" name="is-directed" value="false" /> undirected edge (default)
+      </form>
+      <p id="add-an-edge">click to add an edge</p>
+   </div>
+   <br>
+   <div id="analysis-div">
+      <p>Analyze node:  
+         <input id="node-to-analyze" /> 
+      </p>
+      <p id="analyze">click to analyze</p>
+      <p id="analysis_display"></p>
+   </div>
+
+<div id="cy"></div>
+
+<script src="tedx-library/add-edge.js"></script>
+<script src="tedx-library/analyze-node.js"></script>
+<!-- <script src="tedx-directed-contribution.js"></script> -->
+
+</body>
+
+</html>
