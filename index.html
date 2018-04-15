@@ -6,9 +6,10 @@
    <script src="jquery-2.1.0.min.js"></script>
    <script src="cytoscape-2.1.0.min.js"></script>
    <script src="tedx-library/jstat.js"></script> 
-   <script src="tedx-library/test-data-flat.js"></script>
-   <script src="tedx-library/test-data-stepped.js"></script>
-   <script src="tedx-library/test-data-edgeless.js"></script>
+   <script src="tedx-library/data-sets/test-data-flat.js"></script>
+   <script src="tedx-library/data-sets/test-data-stepped.js"></script>
+   <script src="tedx-library/data-sets/test-data-edgeless.js"></script>
+   <script src="tedx-library/tally-sources.js"></script>
    <script src="tedx-library/main.js"></script>
    <link rel="stylesheet" type="text/css" href="demo.css" media="screen" />
 </head>
@@ -44,15 +45,6 @@
             <p id="analysis-display"></p>
          </div>
        </td>
-<!--        <td>
-         <div id="play-list-div">
-            <p>Generate playlist for:  
-               <input id="node-to-play-list" /> 
-            </p>
-            <p id="play-list-button">click to analyze</p>
-            <p id="play-list-display"></p>
-         </div>
-       </td> -->
        <td>
          <div id="mi-div">
             <p>
@@ -79,17 +71,39 @@
          </div>
        </td>
      </tr>
+     <tr>
+      <td>
+         <div id="i-i-div">
+            <p>
+               Find the info integration for node: <input id="i-i-node" /> 
+            </p>
+            <p id="calculate-i-i">calculate integrated information</p>
+            <p id="i-i-display"></p>
+         </div>
+      </td>
+<!--        <td>
+         <div id="play-list-div">
+            <p>Generate playlist for:  
+               <input id="node-to-play-list" /> 
+            </p>
+            <p id="play-list-button">click to analyze</p>
+            <p id="play-list-display"></p>
+         </div>
+       </td> -->
+     </tr>
    </table>
 
 
    <div id="cy"></div>
 
    <script src="tedx-library/add-edge.js"></script>
-   <script src="tedx-library/analyze-node.js"></script>
-   <script src="tedx-library/mutual-information.js"></script>
-   <script src="tedx-library/pairwise-entropy.js"></script>
-   <script src="tedx-library/global-entropy.js"></script>
-   <script src="tedx-library/swap-data-sets.js"></script>
+   <script src="tedx-library/measures/node-contributors.js"></script>
+   <script src="tedx-library/measures/mutual-information.js"></script>
+   <script src="tedx-library/measures/pairwise-entropy.js"></script>
+   <script src="tedx-library/measures/global-entropy.js"></script>
+   <script src="tedx-library/measures/info-integration.js"></script>
+   <script src="tedx-library/data-sets/swap-data-sets.js"></script>
+
 
 
 </body>

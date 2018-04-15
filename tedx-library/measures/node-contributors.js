@@ -1,5 +1,5 @@
 /*
-	analyze_node: Function 
+	node_contributions: Function 
 		args: 1
 			node_id: Number, id of node to analyze
 		return: array of objects
@@ -17,36 +17,16 @@
 	(file also contains DOM handler and event listeners)
 */
 
-function analyze_node(node_id) {
+function node_contributions(node_id) {
 	var returner = [{},{}];
 
-	var analyzed_node = cy.getElementById(node_id);
-	var all_edges = analyzed_node.connectedEdges();
-
-	var incoming_IDs = [];
-	for (var i = 0; i < all_edges.length; i++) {
-		if (all_edges[i]._private.data.source == node_id) {
-			if (all_edges[i]._private.data.target == node_id) {
-				incoming_IDs.push(i)
-			}
-		} else {
-			incoming_IDs.push(i)
-		}
-	}
-
-	var src_tally = {};
-	for (var index of incoming_IDs) {
-		if (typeof src_tally[all_edges[index]._private.data.source] == "number") {
-			src_tally[all_edges[index]._private.data.source]++;
-		} else {
-			src_tally[all_edges[index]._private.data.source] = 1;
-		}
-	};
+	var src_tally = tally_sources(node_id);
+	console.log(src_tally)
 
 	var src_contributions = {};
 	for (var source in src_tally) {
 		// console.log(src_tally[source], " / ", incoming_IDs.length)
-		src_contributions[source] = src_tally[source] / incoming_IDs.length;
+		src_contributions[source] = src_tally[source] / Object.keys(src_tally).length;
 	};
 
 	src_tally.target = node_id;
@@ -56,10 +36,11 @@ function analyze_node(node_id) {
 	return returner;
 };
 
-var analyze_node_handler = function() {
+
+var node_contributions_handler = function() {
 	var node_to_analyze = document.getElementById("node-to-analyze").value
 	
-	var analysis = analyze_node(node_to_analyze);
+	var analysis = node_contributions(node_to_analyze);
 
 	var analysis_string = JSON.stringify(analysis[1])
 	var analysis_display = document.getElementById("analysis-display");
@@ -67,7 +48,7 @@ var analyze_node_handler = function() {
 };
 
 var analyze_button = document.getElementById("analyze")
-analyze_button.addEventListener("click", analyze_node_handler)
+analyze_button.addEventListener("click", node_contributions_handler)
 
 
 

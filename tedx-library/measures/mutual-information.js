@@ -1,6 +1,15 @@
 function mutual_information(source_node, target_node) {
-	var target_analysis = analyze_node(target_node);
-	return target_analysis[1][source_node];
+	var mi; // number
+
+	var target_analysis = node_contributions(target_node);
+	
+	if (target_analysis[1][source_node] == undefined) {
+		mi = 0;
+	} else {
+		mi = target_analysis[1][source_node];
+	};
+
+	return mi;
 }
 
 var mutual_information_handler = function() {

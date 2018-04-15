@@ -103,7 +103,7 @@ $(document).ready(function() {
        })
    var $cy = $("#cy");
    $cy.cytoscape({
-       elements: edgeless_network,
+       elements: stepped_network,
        style: simpleStyle,
        showOverlay: false,
        minZoom: 0.1,

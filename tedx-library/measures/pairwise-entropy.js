@@ -4,10 +4,10 @@ function pairwise_entropy(source_node, target_node) {
 	var source_target_mi = mutual_information(source_node, target_node);
 	var target_source_mi = mutual_information(target_node, source_node);
 
-	if (source_target_mi == "undefined") {
+	if (source_target_mi == undefined) {
 		source_target_mi = 0;
 	}
-	if (target_source_mi == "undefined") {
+	if (target_source_mi == undefined) {
 		target_source_mi = 0;
 	}
 
@@ -18,6 +18,7 @@ function pairwise_entropy(source_node, target_node) {
 	} else {
 		calculated_p_e = target_source_mi / source_target_mi;
 	}
+
 
 	return calculated_p_e
 }
