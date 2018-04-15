@@ -6,7 +6,9 @@
    <script src="jquery-2.1.0.min.js"></script>
    <script src="cytoscape-2.1.0.min.js"></script>
    <script src="tedx-library/jstat.js"></script> 
-   <script src="tedx-library/test-data.js"></script>
+   <script src="tedx-library/test-data-flat.js"></script>
+   <script src="tedx-library/test-data-stepped.js"></script>
+   <script src="tedx-library/test-data-edgeless.js"></script>
    <script src="tedx-library/main.js"></script>
    <link rel="stylesheet" type="text/css" href="demo.css" media="screen" />
 </head>
@@ -14,6 +16,10 @@
 <body>
    <div id="toolbar">
       <button id="fitButton"           class="customButtons"> Fit </button>
+      Data Sets: 
+      <button id="flat-data"           class="customButtons"> Flat </button>
+      <button id="stepped-data"           class="customButtons"> Stepped </button>
+      <button id="edgeless-data"           class="customButtons"> No-Edges </button>
    </div>
    <table>
      <tr>
@@ -66,6 +72,12 @@
             <p id="p-e-display"></p>
          </div>
        </td>
+      <td>
+         <div id="g-e-div">
+            <p id="calculate-g-e">calculate global entropy </p>
+            <p id="g-e-display"></p>
+         </div>
+       </td>
      </tr>
    </table>
 
@@ -76,7 +88,8 @@
    <script src="tedx-library/analyze-node.js"></script>
    <script src="tedx-library/mutual-information.js"></script>
    <script src="tedx-library/pairwise-entropy.js"></script>
-
+   <script src="tedx-library/global-entropy.js"></script>
+   <script src="tedx-library/swap-data-sets.js"></script>
 
 
 </body>

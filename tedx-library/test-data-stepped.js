@@ -1,4 +1,4 @@
-var network = {
+var stepped_network = {
   "nodes":[
     {
       "group": "nodes", 

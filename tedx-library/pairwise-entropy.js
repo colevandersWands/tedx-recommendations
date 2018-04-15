@@ -19,8 +19,6 @@ function pairwise_entropy(source_node, target_node) {
 		calculated_p_e = target_source_mi / source_target_mi;
 	}
 
-	calculated_p_e = 1 - calculated_p_e;
-
 	return calculated_p_e
 }
 
