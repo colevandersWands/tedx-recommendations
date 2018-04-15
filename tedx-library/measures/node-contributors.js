@@ -21,13 +21,17 @@ function node_contributions(node_id) {
 	var returner = [{},{}];
 
 	var src_tally = tally_sources(node_id);
-	console.log(src_tally)
+
+	var num_contributions = 0;
+	for (var source in src_tally) {
+		num_contributions += src_tally[source];
+	}
 
 	var src_contributions = {};
 	for (var source in src_tally) {
-		// console.log(src_tally[source], " / ", incoming_IDs.length)
-		src_contributions[source] = src_tally[source] / Object.keys(src_tally).length;
+		src_contributions[source] = src_tally[source] / num_contributions;
 	};
+
 
 	src_tally.target = node_id;
 	returner[0] = src_tally;

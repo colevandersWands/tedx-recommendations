@@ -10,17 +10,19 @@
    <script src="tedx-library/data-sets/test-data-stepped.js"></script>
    <script src="tedx-library/data-sets/test-data-edgeless.js"></script>
    <script src="tedx-library/tally-sources.js"></script>
+   <script src="tedx-library/tally-targets.js"></script>
    <script src="tedx-library/main.js"></script>
    <link rel="stylesheet" type="text/css" href="demo.css" media="screen" />
 </head>
 
 <body>
    <div id="toolbar">
-      <button id="fitButton"           class="customButtons"> Fit </button>
+    <button id="add-node" class="customButtons"> New Node </button>
+      <button id="fitButton" class="customButtons"> Fit </button>
       Data Sets: 
-      <button id="flat-data"           class="customButtons"> Flat </button>
-      <button id="stepped-data"           class="customButtons"> Stepped </button>
-      <button id="edgeless-data"           class="customButtons"> No-Edges </button>
+      <button id="flat-data" class="customButtons"> Flat </button>
+      <button id="stepped-data" class="customButtons"> Stepped </button>
+      <button id="edgeless-data" class="customButtons"> No-Edges </button>
    </div>
    <table>
      <tr>
@@ -73,6 +75,24 @@
      </tr>
      <tr>
       <td>
+         <div id="i-a-div">
+            <p>
+               Find the info absorption for node: <input id="i-a-node" /> 
+            </p>
+            <p id="calculate-i-a">calculate absorption information</p>
+            <p id="i-a-display"></p>
+         </div>
+      </td>
+      <td>
+         <div id="i-c-div">
+            <p>
+               Find the info contribution for node: <input id="i-c-node" /> 
+            </p>
+            <p id="calculate-i-c">calculate contributed information</p>
+            <p id="i-c-display"></p>
+         </div>
+      </td>
+            <td>
          <div id="i-i-div">
             <p>
                Find the info integration for node: <input id="i-i-node" /> 
@@ -101,8 +121,11 @@
    <script src="tedx-library/measures/mutual-information.js"></script>
    <script src="tedx-library/measures/pairwise-entropy.js"></script>
    <script src="tedx-library/measures/global-entropy.js"></script>
+   <script src="tedx-library/measures/info-absorption.js"></script>
+   <script src="tedx-library/measures/info-contribution.js"></script>
    <script src="tedx-library/measures/info-integration.js"></script>
    <script src="tedx-library/data-sets/swap-data-sets.js"></script>
+   <script src="tedx-library/add-node.js"></script>
 
 
 
