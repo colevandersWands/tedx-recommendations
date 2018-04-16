@@ -7,6 +7,7 @@ function similarity_to(node) {
 	for (var i = 0; i < all_nodes.length; i++) {
 		if (i != node) {
 			var i_a = pairwise_entropy(all_nodes[i]._private.data.id, node);
+			i_a += info_integration(all_nodes[i]._private.data.id);
 			var new_result = {};
 			new_result.key = i
 			new_result.i_a = i_a;

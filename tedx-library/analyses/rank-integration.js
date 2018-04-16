@@ -13,7 +13,7 @@ function integration_ranking() {
 	}
 
 	returner = mergeSort(unsorted);
-	returner.reverse;
+	returner.reverse();
 
 	return returner;
 }
