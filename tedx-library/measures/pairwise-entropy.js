@@ -33,6 +33,37 @@ var pairwise_entropy_handler = function() {
 	p_e_display.innerHTML = p_e;
 }
 
-var p_e_button = document.getElementById("calculate-p-e");
-p_e_button.addEventListener("click", pairwise_entropy_handler);
+
+var render_p_e_component = function(container) {
+	var p_e_container = document.getElementById(container);
+
+	var p_e_instructions = document.createElement("p");
+	p_e_instructions.innerHTML = "Calculate pairwise entropy between:";
+	
+	var p_e_input_1 = document.createElement("input");
+	p_e_input_1.setAttribute("id", "p-e-source");
+
+	var p_e_input_2 = document.createElement("input");
+	p_e_input_2.setAttribute("id", "p-e-target");
+
+	var p_e_button = document.createElement("button");
+	p_e_button.setAttribute("id", "calculate-p-e");
+	p_e_button.setAttribute("class", "customButtons");
+	p_e_button.innerHTML = "calculate pe (symmetrical)";
+
+	var p_e_display = document.createElement("p");
+	p_e_display.setAttribute("id", "p-e-display");
+
+	p_e_container.appendChild(p_e_instructions);
+	p_e_container.appendChild(p_e_input_1);
+	p_e_container.appendChild(p_e_input_2);
+	p_e_container.appendChild(p_e_button);
+	p_e_container.appendChild(p_e_display);
+
+	var p_e_button = document.getElementById("calculate-p-e");
+	p_e_button.addEventListener("click", pairwise_entropy_handler);
+
+}
+
+render_p_e_component("p-e-div");
 

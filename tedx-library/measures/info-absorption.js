@@ -25,6 +25,33 @@ var info_absorption_handler = function() {
 	i_a_display.innerHTML = i_a;
 }
 
-var i_a_button = document.getElementById("calculate-i-a");
-i_a_button.addEventListener("click", info_absorption_handler);
 
+var render_i_a_component = function(container) {
+	var i_a_container = document.getElementById(container);
+
+	var i_a_instructions = document.createElement("p");
+	i_a_instructions.innerHTML = "Analyze node's info absorbtion:";
+	
+	var i_a_input = document.createElement("input");
+	i_a_input.setAttribute("id", "i-a-node");
+
+	var i_a_button = document.createElement("button");
+	i_a_button.setAttribute("id", "calculate-i-a");
+	i_a_button.setAttribute("class", "customButtons");
+	i_a_button.innerHTML = "calculate ia";
+
+	var i_a_display = document.createElement("p");
+	i_a_display.setAttribute("id", "i-a-display");
+
+	i_a_container.appendChild(i_a_instructions);
+	i_a_container.appendChild(i_a_input);
+	i_a_container.appendChild(i_a_button);
+	i_a_container.appendChild(i_a_display);
+
+	var i_a_button = document.getElementById("calculate-i-a");
+	i_a_button.addEventListener("click", info_absorption_handler);
+
+
+}
+
+render_i_a_component("i-a-div");

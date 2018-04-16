@@ -27,6 +27,29 @@ var global_entropy_handler = function() {
 	g_e_display.innerHTML = g_e;
 }
 
-var g_e_button = document.getElementById("calculate-g-e");
-g_e_button.addEventListener("click", global_entropy_handler);
 
+var render_g_e_component = function(container) {
+	var g_e_container = document.getElementById(container);
+
+	var g_e_instructions = document.createElement("p");
+	g_e_instructions.innerHTML = "Calculate global entropy:";
+
+	var g_e_button = document.createElement("button");
+	g_e_button.setAttribute("id", "calculate-g-e");
+	g_e_button.setAttribute("class", "customButtons");
+	g_e_button.innerHTML = "calculate ge";
+
+	var g_e_display = document.createElement("p");
+	g_e_display.setAttribute("id", "g-e-display");
+
+	g_e_container.appendChild(g_e_instructions);
+	g_e_container.appendChild(g_e_button);
+	g_e_container.appendChild(g_e_display);
+
+	var g_e_button = document.getElementById("calculate-g-e");
+	g_e_button.addEventListener("click", global_entropy_handler);
+
+
+}
+
+render_g_e_component("g-e-div");
