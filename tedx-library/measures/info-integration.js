@@ -5,10 +5,6 @@ function info_integration(node) {
 	var contributed_info = info_contribution(node);
 
 	calculated_i_i = absorbed_info * contributed_info;
-	console.log(calculated_i_i)
-
-	var all_edges = cy.edges();
-	calculated_i_i *= all_edges.length;
 
 	return calculated_i_i
 }

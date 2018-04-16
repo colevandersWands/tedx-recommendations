@@ -27,7 +27,6 @@ var global_entropy_handler = function() {
 	g_e_display.innerHTML = g_e;
 }
 
-
 var render_g_e_component = function(container) {
 	var g_e_container = document.getElementById(container);
 
@@ -48,8 +47,6 @@ var render_g_e_component = function(container) {
 
 	var g_e_button = document.getElementById("calculate-g-e");
 	g_e_button.addEventListener("click", global_entropy_handler);
-
-
 }
 
 render_g_e_component("g-e-div");

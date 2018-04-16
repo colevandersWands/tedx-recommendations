@@ -22,7 +22,6 @@ var mutual_information_handler = function() {
 	mi_display.innerHTML = mi;
 }
 
-
 var render_m_i_component = function(container) {
 	var m_i_container = document.getElementById(container);
 
@@ -51,7 +50,6 @@ var render_m_i_component = function(container) {
 
 	var mi_button = document.getElementById("calculate-m-i");
 	mi_button.addEventListener("click", mutual_information_handler);
-
 }
 
 render_m_i_component("m-i-div");

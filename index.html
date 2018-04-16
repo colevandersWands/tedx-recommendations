@@ -10,6 +10,7 @@
    <script src="tedx-library/data-sets/test-data-stepped.js"></script>
    <script src="tedx-library/data-sets/more-realistic.js"></script>
    <script src="tedx-library/utilities/tally-sources.js"></script>
+   <script src="tedx-library/utilities/merge-sort.js"></script>
    <script src="tedx-library/utilities/tally-targets.js"></script>
    <script src="tedx-library/main.js"></script>
    <link rel="stylesheet" type="text/css" href="demo.css" media="screen" />
@@ -27,24 +28,32 @@
       <button id="edgeless-data" class="customButtons"> No-Edges </button>
    </div>
    <br>
-   <div>
-      <button id="generate-edges" class="customButtons"> Generate n edges: </button>
-      <input id="num-edges" /> 
-   </div>
+
    <table>
      <tr>
-       <td>
-         <div id="add-edge-div">
-            <p>
-               Add edge from <input id="new-source" /> to <input id="new-target" /> 
-            </p>
-            <form>
-              <input type="radio" name="is-directed" value="true" /> directed edge
-              <input type="radio" name="is-directed" value="false" /> undirected edge (default)
-            </form>
-            <button id="add-an-edge" class="customButtons">add an edge </button>
-         </div>
+      <td>
+        <div id="add-edge-div">
+          <p>
+             Add edge from <input id="new-source" /> to <input id="new-target" /> 
+          </p>
+          <form>
+            <input type="radio" name="is-directed" value="true" /> directed edge
+            <input type="radio" name="is-directed" value="false" /> undirected edge (default)
+          </form>
+          <button id="add-an-edge" class="customButtons">add an edge </button>
+       </div>
+      </td>
+      <td>
+        <div>
+          <button id="generate-edges" class="customButtons"> Generate n edges: </button>
+          <input id="num-edges" /> 
+        </div>
        </td>
+      <td>
+         <div id="g-e-div"> </div>
+       </td>
+     </tr>
+     <tr>
        <td>
          <div id="n-c-div"></div>
        </td>
@@ -53,9 +62,6 @@
        </td>
        <td>
          <div id="p-e-div"></div>
-       </td>
-      <td>
-         <div id="g-e-div"> </div>
        </td>
      </tr>
      <tr>
@@ -68,15 +74,28 @@
       <td>
          <div id="i-i-div"></div>
       </td>
-<!--        <td>
-         <div id="play-list-div">
-            <p>Generate playlist for:  
-               <input id="node-to-play-list" /> 
-            </p>
-            <p id="play-list-button">click to analyze</p>
-            <p id="play-list-display"></p>
-         </div>
-       </td> -->
+     </tr>
+     <tr>
+      <td>
+         <div id="a-r-div"></div>
+      </td>
+      <td>
+         <div id="c-r-div"></div>
+      </td>
+      <td>
+        <div id="i-r-div"></div>
+      </td>
+     </tr>
+     <tr>
+        <td>
+          <div id="pre-recs-div"></div>
+        </td>
+        <td>
+          <div id="post-recs-div"></div>
+        </td>
+        <td>
+          <div id="similarity-to-div"></div>
+        </td>
      </tr>
    </table>
 
@@ -93,8 +112,16 @@
    <script src="tedx-library/measures/info-absorption.js"></script>
    <script src="tedx-library/measures/info-contribution.js"></script>
    <script src="tedx-library/measures/info-integration.js"></script>
+
    <script src="tedx-library/data-sets/swap-data-sets.js"></script>
    <script src="tedx-library/data-sets/generate-edges.js"></script>
+
+    <script src="tedx-library/analyses/rank-absorption.js"></script>
+    <script src="tedx-library/analyses/rank-contribution.js"></script>
+    <script src="tedx-library/analyses/rank-integration.js"></script>
+    <script src="tedx-library/analyses/pre-recs.js"></script>
+    <script src="tedx-library/analyses/post-recs.js"></script>
+    <script src="tedx-library/analyses/similarity-to.js"></script>
 
 
 

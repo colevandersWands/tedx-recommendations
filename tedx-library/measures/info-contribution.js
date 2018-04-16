@@ -28,7 +28,6 @@ var info_contribution_handler = function() {
 	i_c_display.innerHTML = i_c;
 }
 
-
 var render_i_c_component = function(container) {
 	var i_c_container = document.getElementById(container);
 
@@ -53,8 +52,6 @@ var render_i_c_component = function(container) {
 
 	var i_c_button = document.getElementById("calculate-i-c");
 	i_c_button.addEventListener("click", info_contribution_handler);
-
-
 }
 
 render_i_c_component("i-c-div");

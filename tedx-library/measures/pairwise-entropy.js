@@ -33,7 +33,6 @@ var pairwise_entropy_handler = function() {
 	p_e_display.innerHTML = p_e;
 }
 
-
 var render_p_e_component = function(container) {
 	var p_e_container = document.getElementById(container);
 
@@ -62,7 +61,6 @@ var render_p_e_component = function(container) {
 
 	var p_e_button = document.getElementById("calculate-p-e");
 	p_e_button.addEventListener("click", pairwise_entropy_handler);
-
 }
 
 render_p_e_component("p-e-div");
